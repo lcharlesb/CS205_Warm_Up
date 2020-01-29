@@ -3,14 +3,14 @@
 # Load Command
 
 # =============Sales=========== #
-# searchTitle
+# searchGlobalSales
 # searchYear
 # searchPlatform
 # searchRank
 
 # ===========Ratings========== #
 
-# searchGameName
+# searchTitle
 # searchMetacritic
-# searchUser
+# searchUserScore
 
