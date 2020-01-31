@@ -3,6 +3,7 @@
 # Load Command
 
 # =============Sales=========== #
+
 # searchGlobalSales
     # base:
     query = "SELECT Name, Platform, GlobalSales FROM tblSales"
@@ -15,9 +16,9 @@
     query = "SELECT Name, Platform, Year FROM tblSales WHERE Year = ?"
 # searchPlatform
     # base:
-    query = "(SELECT Name, Platform FROM tblSales) UNION (SELECT Name, Console FROM tblScores)"
+    query = "(SELECT Name, Platform FROM tblSales) UNION (SELECT Name, Console FROM tblRatings)"
     # by platform:
-    query = "(SELECT Name, Platform FROM tblSales WHERE Platform = ?) UNION (SELECT Name, Console FROM tblScores WHERE Console = ?)"
+    query = "(SELECT Name, Platform FROM tblSales WHERE Platform = ?) UNION (SELECT Name, Console FROM tblRatings WHERE Console = ?)"
 # searchRank
     # base:
     query = "SELECT Rank, Name, Platform FROM tblSales"
@@ -28,16 +29,16 @@
 
 # searchTitle
     # base:
-    query = "(SELECT Name, Platform FROM tblSales) UNION (SELECT Name, Console FROM tblScores)"
+    query = "(SELECT Name, Platform FROM tblSales) UNION (SELECT Name, Console FROM tblRatings)"
     # by title:
     query = "SELECT Name FROM tblSales WHERE Name = ?"
 # searchMetascore
     # base:
-    query = "SELECT Metascore, Name FROM tblScores"
+    query = "SELECT Metascore, Name FROM tblRatings"
     # by metascore:
-    query = "SELECT Name, Metascore FROM tblScores WHERE Metascore = ?"
+    query = "SELECT Name, Metascore FROM tblRatings WHERE Metascore = ?"
 # searchUserScore
     # base:
-    query = "SELECT Userscore, Name FROM tblScores"
+    query = "SELECT Userscore, Name FROM tblRatings"
     # by userscore:
-    query = "SELECT Name, Userscore FROM tblScores WHERE Userscore = ?"
+    query = "SELECT Name, Userscore FROM tblRatings WHERE Userscore = ?"
