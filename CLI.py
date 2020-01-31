@@ -1,4 +1,4 @@
-import csv, sqlite3
+import csv, sqlite3, sys
 
 def LoadData():
 
@@ -28,3 +28,18 @@ def LoadData():
     conn.close()
 
 LoadData()
+
+# If program invoked directly
+if __name__ == "__main__":
+
+    userInput = ""
+
+    while (userInput != "quit"):
+
+        # Get user input
+        userInput = input("")
+
+        # Handle user input
+
+    # Exit b/c user input == "quit"
+    sys.exit()
