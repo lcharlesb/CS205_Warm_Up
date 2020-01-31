@@ -27,6 +27,26 @@ def LoadData():
     conn.commit()
     conn.close()
 
+def CreateConnection(db):
+    conn = None
+    try:
+        conn = sqlite3.connect(db)
+    except Error as e:
+        print(e)
+
+    return conn
+
+def ExecuteQuery(query, params):
+    db = 'database.db'
+    conn = CreateConnection(db)
+
+    cur = conn.cursor()
+    cur.execute(query, params)
+
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
 LoadData()
 
 # If program invoked directly
