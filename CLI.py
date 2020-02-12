@@ -49,6 +49,7 @@ def ExecuteQuery(query, params):
 
 LoadData()
 
+
 def searchSalesByTitle():
     inputArray = userInput.split()
 
