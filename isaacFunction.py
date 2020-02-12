@@ -20,18 +20,20 @@ def salesMaster(identifyFirst):
     newArray[1] = s
     identifyFirst = newArray[0]
     identifyQuery = newArray[1]
+    identifyFirst.lower()
 
 
-    if(identifyFirst == "Platform" or identifyFirst == "platform"):
+    if(identifyFirst == "platform"):
         searchSalesPlatform(identifyQuery)
-    if (identifyFirst == "rank" or identifyFirst == "Rank"):
+    if (identifyFirst == "rank"):
         searchSalesRank(identifyQuery)
-    if(identifyFirst == "Year" or identifyFirst == "year"):
+    if(identifyFirst == "year"):
         seachSalesYear(identifyQuery)
-    if(identifyFirst == "Global" or identifyFirst == "global"):
+    if(identifyFirst == "global"):
         searchGlobalSales(identifyQuery)
 
 def ratingMaster(newArray):
+
 
 def searchSalesPlatform(newArray):
     # Query
