@@ -48,9 +48,110 @@ def ExecuteQuery(query, params):
         print(row)
 
 LoadData()
-
-
+# TODO FRANK: Add your functions here(Delete this when added)
 def searchSalesByTitle():
+    inputArray = userInput.split()
+
+    if (len(inputArray) > 2):
+
+        i = len(inputArray) - 1
+        print(inputArray[i])
+        newArray = [0, 0]
+        newArray[0] = inputArray[0]
+        s = ""
+        while (i > 0):
+            print(i)
+            s = s + inputArray[-i]
+            s = s + " "
+            i -= 1
+
+    newArray[1] = s
+    # TODO LUKE: Add query here
+    print(newArray)
+    return newArray
+
+
+# TODO KOTA: Add your functions here(Delete this when added)
+
+# TODO ISAAC: Add your functions here(Delete this when added)
+def searchSalesPlatform(newArray):
+    # Query
+    # Print
+    inputArray = newArray.split()
+
+    i = len(inputArray) - 1
+    print(inputArray[i])
+    newArray = [0, 0]
+    newArray[0] = inputArray[0]
+    s = ""
+    while (i > 0):
+        print(i)
+        s = s + inputArray[-i]
+        s = s + " "
+        i -= 1
+
+    newArray[1] = s
+    # TODO LUKE: Add query here
+    print(newArray)
+
+
+def searchSalesRank(newArray):
+    # Query
+    # Print
+    inputArray = newArray.split()
+
+    i = len(inputArray) - 1
+    print(inputArray[i])
+    newArray = [0, 0]
+    newArray[0] = inputArray[0]
+    s = ""
+    while (i > 0):
+        print(i)
+        s = s + inputArray[-i]
+        s = s + " "
+        i -= 1
+
+    newArray[1] = s
+    # TODO LUKE: Add query here
+    print(newArray)
+
+
+# TODO KOTA & ISAAC: Add your master functions here(Delete this when added)
+def salesMaster(identifyFirst):
+
+    inputArray = identifyFirst.split()
+
+    if (len(inputArray) > 2):
+
+        i = len(inputArray) - 1
+        print(inputArray[i])
+        newArray = [0, 0]
+        newArray[0] = inputArray[0]
+        s = ""
+        while (i > 0):
+            print(i)
+            s = s + inputArray[-i]
+            s = s + " "
+            i -= 1
+
+    newArray[1] = s
+    identifyFirst = newArray[0]
+    identifyQuery = newArray[1]
+
+
+
+    if(identifyFirst == "Platform" or identifyFirst == "platform"):
+        searchSalesPlatform(identifyQuery)
+    if(identifyFirst == "Rank" or identifyFirst == "rank"):
+        searchSalesRank(identifyQuery)
+    if(identifyFirst == "Year" or identifyFirst == "year"):
+        seachSalesYear(identifyQuery)
+    if(identifyFirst == "Title" or identifyFirst == "title"):
+        searchGlobalSales(identifyQuery)
+
+#============Validate Input Function==============#
+def validateInput():
+
     inputArray = userInput.split()
 
     if (len(inputArray) > 2):
@@ -70,9 +171,15 @@ def searchSalesByTitle():
     print(newArray)
 
 
+    if(newArray[0] == "sales" or newArray[0] == "Sales"):
+         salesMaster(newArray[1])
 
+    if(newArray[0] == "ratings" or newArray[0] == "Ratings"):
+        ratingMaster(newArray[1])
 
-    return newArray
+    else:
+        print("Invalid Input")
+
 
 # If program invoked directly
 if __name__ == "__main__":
