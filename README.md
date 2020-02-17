@@ -5,7 +5,7 @@
 # Load Command
 
 # =============Sales=========== #
-# searchGlobalSales
+# searchSalesTitle
 # searchYear
 # searchPlatform
 # searchRank
