@@ -48,28 +48,8 @@ def ExecuteQuery(query, params):
         print(row)
 
 LoadData()
-# TODO FRANK: Add your functions here(Delete this when added)
-def searchSalesByTitle():
-    inputArray = userInput.split()
 
-    if (len(inputArray) > 2):
-
-        i = len(inputArray) - 1
-        print(inputArray[i])
-        newArray = [0, 0]
-        newArray[0] = inputArray[0]
-        s = ""
-        while (i > 0):
-            print(i)
-            s = s + inputArray[-i]
-            s = s + " "
-            i -= 1
-
-    newArray[1] = s
-    # TODO LUKE: Add query here
-    print(newArray)
-    return newArray
-
+#=======Ratings=======#
 def searchRatingsCritic(input):
     # needs query
 
@@ -79,51 +59,28 @@ def searchRatingsUser(input):
 def searchRatingsTitle(input):
     # needs query
 
+#========Sales========#
+def searchSalesTitle():
+    # TODO LUKE: Add query here
+
+def searchSalesYear(newArray):
+
+    # TODO LUKE: Add query here
+
+def searchSalesPlatform(newArray):
+
+    # TODO LUKE: Add query here
+
+def searchSalesRank(newArray):
+
+
+# TODO LUKE: Add query here
+#=======Error Handling======#
 def ratingsError():
     print("Your ratings search does not contain a valid command.")
 
-# TODO ISAAC: Add your functions here(Delete this when added)
-def searchSalesPlatform(newArray):
-    # Query
-    # Print
-    inputArray = newArray.split()
 
-    i = len(inputArray) - 1
-    print(inputArray[i])
-    newArray = [0, 0]
-    newArray[0] = inputArray[0]
-    s = ""
-    while (i > 0):
-        print(i)
-        s = s + inputArray[-i]
-        s = s + " "
-        i -= 1
-
-    newArray[1] = s
-    # TODO LUKE: Add query here
-    print(newArray)
-
-
-def searchSalesRank(newArray):
-    # Query
-    # Print
-    inputArray = newArray.split()
-
-    i = len(inputArray) - 1
-    print(inputArray[i])
-    newArray = [0, 0]
-    newArray[0] = inputArray[0]
-    s = ""
-    while (i > 0):
-        print(i)
-        s = s + inputArray[-i]
-        s = s + " "
-        i -= 1
-
-    newArray[1] = s
-    # TODO LUKE: Add query here
-    print(newArray)
-
+#======Sales Master======#
 def salesMaster(identifyFirst):
 
     inputArray = identifyFirst.split()
@@ -149,13 +106,16 @@ def salesMaster(identifyFirst):
 
     if(identifyFirst == "Platform" or identifyFirst == "platform"):
         searchSalesPlatform(identifyQuery)
-    if(identifyFirst == "Rank" or identifyFirst == "rank"):
+    elif(identifyFirst == "Rank" or identifyFirst == "rank"):
         searchSalesRank(identifyQuery)
-    if(identifyFirst == "Year" or identifyFirst == "year"):
-        seachSalesYear(identifyQuery)
-    if(identifyFirst == "Title" or identifyFirst == "title"):
-        searchGlobalSales(identifyQuery)
-        
+    elif(identifyFirst == "Year" or identifyFirst == "year"):
+        searchSalesYear(identifyQuery)
+    elif(identifyFirst == "Title" or identifyFirst == "title"):
+        searchSalesTitle(identifyQuery)
+    else:
+        ratingsError()
+
+#======Rating Master======#
 def ratingMaster(input):
     inputArray = input.split()
 
@@ -174,7 +134,6 @@ def ratingMaster(input):
             i -= 1
 
     newArray[1] = s
-    print(newArray)
 
     # calls each individual function (criticRating/userRating/title)
     if(newArray[0] == "criticRating" or newArray[0] == "CriticRating"):
@@ -186,7 +145,7 @@ def ratingMaster(input):
     else:
         ratingsError()
 
-#============Validate Input Function==============#
+#============Validate Input ==============#
 def validateInput():
 
     inputArray = userInput.split()
@@ -205,7 +164,6 @@ def validateInput():
             i -= 1
 
     newArray[1] = s
-    print(newArray)
 
 
     if(newArray[0] == "sales" or newArray[0] == "Sales"):
@@ -215,7 +173,7 @@ def validateInput():
         ratingMaster(newArray[1])
 
     else:
-        print("Invalid Input")
+        ratingsError();
 
 
 # If program invoked directly
