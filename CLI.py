@@ -48,7 +48,9 @@ def ExecuteQuery(query, params):
         print(row)
 
 LoadData()
+
 # TODO FRANK: Add your functions here(Delete this when added)
+
 def searchSalesByTitle():
     inputArray = userInput.split()
 
