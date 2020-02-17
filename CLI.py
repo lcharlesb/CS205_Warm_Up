@@ -80,7 +80,7 @@ def searchRatingsTitle(input):
     # needs query
 
 def ratingsError():
-    print("Your rating does not contain a valid command.")
+    print("Your ratings search does not contain a valid command.")
 
 # TODO ISAAC: Add your functions here(Delete this when added)
 def searchSalesPlatform(newArray):
