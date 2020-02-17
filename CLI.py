@@ -70,8 +70,6 @@ def searchSalesByTitle():
     print(newArray)
     return newArray
 
-
-# TODO KOTA: Add your functions here(Delete this when added)
 def searchRatingsCritic(input):
     # needs query
 
@@ -126,8 +124,6 @@ def searchSalesRank(newArray):
     # TODO LUKE: Add query here
     print(newArray)
 
-
-# TODO KOTA & ISAAC: Add your master functions here(Delete this when added)
 def salesMaster(identifyFirst):
 
     inputArray = identifyFirst.split()
