@@ -146,7 +146,7 @@ def ratingMaster(input):
         ratingsError()
 
 #============Validate Input ==============#
-def validateInput():
+def validateInput(userInput):
 
     inputArray = userInput.split()
 
@@ -185,10 +185,10 @@ if __name__ == "__main__":
 
         # Get user input
         userInput = input("")
+        if(userInput == "quit" or userInput == "exit"):
+            sys.exit()
+        validateInput(userInput)
 
-        # Handle user input
-
-    # Exit b/c user input == "quit"
     sys.exit()
 
 
