@@ -1,4 +1,5 @@
 import csv, sqlite3, sys
+from prettytable import PrettyTable
 
 def LoadData():
 
@@ -36,7 +37,7 @@ def CreateConnection(db):
 
     return conn
 
-def ExecuteQuery(query, params):
+def ExecuteQuery(query, params, headers):
     db = 'database.db'
     conn = CreateConnection(db)
 
@@ -47,5 +48,9 @@ def ExecuteQuery(query, params):
     if(len(rows) == 0):
         print("'" + str(params[0]) + "' not present in database - please check input and try again.")
     else:
+        t = PrettyTable(headers)
+
         for row in rows:
-            print(row)
+            t.add_row(row)
+
+        print(t)
